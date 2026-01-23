@@ -1,5 +1,8 @@
-import {h1, p} from "ziko"
-import { ZikoWrapper } from "ziko-wrapper/react"
+import { tags } from "ziko"
+import { ZikoWrapper, zikofy } from "ziko-wrapper/react"
+
+
+const {h1, p} = tags
 
 const Heading = ({msg}) => h1(msg)
 

@@ -13,8 +13,3 @@ export declare function zikofy(
     Component: ReactElement | FunctionComponent<any> | ComponentClass<any>,
     props?: Record<string, any>
 ): UIElement;
-
-// export declare function ReactWrapper(
-//     Component: ReactElement | FunctionComponent<any> | ComponentClass<any>,
-//     props?: Record<string, any>
-// ): UIElement;

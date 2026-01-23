@@ -1,18 +1,18 @@
 import { useRef, useEffect } from "react";
-const processZikoComponent = (child) => {
+const process_ziko_component = (child) => {
   if (typeof child?.type === "function") {
-    let zikoComponent;
+    let ZIKO_COMPONENT;
     if (child.props?.children) {
       const childArray = Array.isArray(child.props.children)
         ? child.props.children
         : [child.props.children];
       const processedChildren = childArray
-        .map((nestedChild) => processZikoComponent(nestedChild))
+        .map((nestedChild) => process_ziko_component(nestedChild))
         .filter((element) => element !== null);
-      zikoComponent = child.type(child.props, ...processedChildren);
+      ZIKO_COMPONENT = child.type(child.props, ...processedChildren);
     } 
-    else zikoComponent = child.type(child.props);
-    return zikoComponent.unrender();
+    else ZIKO_COMPONENT = child.type(child.props);
+    return ZIKO_COMPONENT.unmount();
   }
   return null;
 };
@@ -23,7 +23,7 @@ export function ZikoWrapper({ children }) {
       containerRef.current.innerHTML = "";
       const childArray = Array.isArray(children) ? children : [children];
       childArray.forEach((child) => {
-        const processedComponent = processZikoComponent(child);
+        const processedComponent = process_ziko_component(child);
         if (processedComponent?.element instanceof HTMLElement) {
           containerRef.current.appendChild(processedComponent.element);
         }

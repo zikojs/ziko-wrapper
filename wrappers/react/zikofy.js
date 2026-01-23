@@ -1,34 +1,16 @@
-import { UIElement } from "ziko";
-import { createRoot } from "react-dom/client";
-import { isValidElement, createElement } from "react";
+import {createRoot} from "react-dom/client";
+import { isValidElement,createElement } from "react";
+import { tags } from "ziko/ui"
 
-const zikofy = (Component, props) => {
-  const container = document.createElement("div");
-  const root = createRoot(container);
-  const element = isValidElement(Component) ? Component : createElement(Component, props);
-  const ui = new UIElement()
-    .style({
-      display: "contents",
-    })
-    .setAttr({
-      dataWrapper: "react",
-    });
-  root.render(element);
-  const observer = new MutationObserver(() => {
-    if (container.firstChild) {
-      observer.disconnect();
-      Object.defineProperty(ui, "element", {
-        get() {
-          return this.__ele__.firstChild;
-        },
-        configurable: false,
-      });
-    }
-  });
-  observer.observe(container, { childList: true });
-  return ui;
+export const zikofy = (Component, props = {}) => {
+    const container = document.createElement("div");
+    container.style.display = 'contents';
+    container.setAttribute('data-wrapper', 'react')
+
+    const root = createRoot(container);
+    const isJsx = isValidElement(Component);
+    root.render(isJsx ? Component : createElement(Component, props));
+    const ui = tags.div()
+    ui.replaceElementWith(container)
+    return ui;
 };
-
-export{
-    zikofy
-}

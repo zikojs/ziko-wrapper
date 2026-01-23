@@ -7,7 +7,7 @@ function check(Component, attributes) {
 async function renderToStaticMarkup(Component, props, { default: children, ...slotted }, metadata) {
     const UI = isAsync(Component) ? await Component(props) : Component(props)
     const html = renderToString(UI)
-    // console.log({metadata})
+    console.log({metadata})
     return { 
         html,
         // hydration: {

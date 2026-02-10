@@ -9,7 +9,3 @@ export function ZikoWrapper({ children }: WrapperProps): JSX.Element;
 
 export declare const containerRef: RefObject<HTMLDivElement>;
 
-export declare function zikofy(
-    Component: ReactElement | FunctionComponent<any> | ComponentClass<any>,
-    props?: Record<string, any>
-): UIElement;

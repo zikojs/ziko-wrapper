@@ -14,8 +14,6 @@
   },
   "dependencies": {
     "p5.wrapper": "^0.0.2",
-    "preact": "^10.26.9",
-    "ziko": "^0.0.29",
-    "ziko-wrapper": "^0.0.28"
+    "preact": "^10.26.9"
   }
 }

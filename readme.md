@@ -1,5 +1,4 @@
-> [!NOTE]  
-> This project is part of the [ZikoJS](https://github.com/zakarialaoui10/ziko.js) ecosystem.
+[![ziko-wrapper](https://raw.githubusercontent.com/zikojs/.github/main/assets/banners/ziko-wrapper.svg)](https://github.com/zikojs)
 
 # Ziko-wrapper 
 Ziko-Wrapper is a tool that facilitates the rendering of ZikoJS elements within other frameworks and the embedding of framework-specific components into ZikoJS, enabling seamless integration and interoperability between different ecosystems.

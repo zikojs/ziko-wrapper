@@ -9,8 +9,8 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.0",
-    "ziko": "^0.0.27",
-    "ziko-wrapper": "^0.0.27"
+    "astro": "^6.0.8",
+    "zextra": "^1.1.0",
+    "ziko-wrapper": "^0.30.4"
   }
 }

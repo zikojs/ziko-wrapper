@@ -1,5 +1,5 @@
 const astroZikojs = (options = {}) => {
-  const plugins = options.plugins || []
+  const noExternal = options.noExternal || []
 
   return {
     name: "astro-zikojs",
@@ -17,12 +17,12 @@ const astroZikojs = (options = {}) => {
         // 2. Merge noExternal
         const existing = config.vite?.ssr?.noExternal || []
 
-        if (plugins.length) {
+        if (noExternal.length) {
           updateConfig({
             vite: {
               ssr: {
                 noExternal: [
-                  ...new Set([...existing, ...plugins])
+                  ...new Set([...existing, ...noExternal])
                 ]
               }
             }

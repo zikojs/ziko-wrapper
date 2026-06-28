@@ -11,6 +11,6 @@
   "dependencies": {
     "astro": "^6.0.8",
     "zextra": "^1.1.0",
-    "ziko-wrapper": "^0.31.0"
+    "ziko-wrapper": "^0.32.0"
   }
 }

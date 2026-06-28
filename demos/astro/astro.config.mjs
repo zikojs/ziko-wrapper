@@ -8,14 +8,8 @@ export default defineConfig({
     integrations : [
         zikojs({
             // to use client:load
-            plugins : ['zextra']
+            // https://vite.dev/config/ssr-options#ssr-noexternal
+            noExternal : ['zextra']
         }),
     ],
-    //  vite: {
-    //     ssr: {
-    //         noExternal: [
-    //             'zextra'
-    //         ]
-    //     }
-    // }
 });

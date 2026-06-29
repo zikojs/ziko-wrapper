@@ -23,7 +23,7 @@ function defineComponent(tagName, ui, properties) {
         acc[key] = this[key];
         return acc;
       }, {});
-      this.element = ui(propertyValues).unrender();
+      this.element = ui(propertyValues).unmount();
       const divElement = this.shadowRoot.querySelector(
         '[data-engine="zikojs"]'
       );

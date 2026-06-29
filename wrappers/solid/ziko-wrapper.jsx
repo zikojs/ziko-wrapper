@@ -12,7 +12,7 @@ export function ZikoWrapper(props) {
           const items = resolvedChildren.toArray();
           items.forEach(item => {
             if (item) {
-              item.unrender()
+              item.unmount()
               Wrapper.append(item.element);
             }
           });

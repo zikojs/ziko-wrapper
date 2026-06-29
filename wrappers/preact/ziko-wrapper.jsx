@@ -14,7 +14,7 @@ const processZikoComponent = (child) => {
     } else {
       zikoComponent = child.type(child.props);
     }
-    return zikoComponent.unrender();
+    return zikoComponent.unmount();
   }
   return null;
 };
